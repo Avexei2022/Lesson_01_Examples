@@ -1,4 +1,5 @@
 ﻿// Sum two integer
-int numberA = 3;
+int numberA = 31;
 int numberВ = 5;
-Console.WriteLine(numberA + numberВ );
+int result = numberA + numberВ
+Console.WriteLine(result);
