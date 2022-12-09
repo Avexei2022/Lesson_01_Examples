@@ -1,4 +1,4 @@
 ﻿// Вычисление частного двух чисел
-int numberA = 10;
+int numberA = 12;
 int numberB = 5;
 Console.WriteLine(numberA/numberB);
