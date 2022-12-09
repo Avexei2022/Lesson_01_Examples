@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Вычисление частного двух чисел
+int numberA = 10;
+int numberB = 5;
+Console.WriterLine(numberA/numberB);
