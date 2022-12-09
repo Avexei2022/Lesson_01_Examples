@@ -9,5 +9,5 @@ if(username == "Маша")
 else
 {
     Console.Write("Привет,с");
-    Console.WrteLine(username)
+    Console.WrteLine(username);
 }
