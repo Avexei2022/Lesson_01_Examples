@@ -1,13 +1,12 @@
 ﻿// Personal greeting code
 Console.Write("Введите имя пользователя:");
-string username = Console.ReadLine();
-Console.WriteLine(username);
-if(username == "Маша")
+string username=Console.ReadLine();
+if(username=="Маша")
 {
-    Console.WriteLine("Ура, это же Маша");
+Console.WriteLine("Ура, это же Маша");
 }
 else
 {
-    Console.Write("Привет,с");
+    Console.Write("Привет, ");
     Console.WrteLine(username);
 }
