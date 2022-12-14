@@ -14,21 +14,11 @@ int GetData()
     return Convert.ToInt32(Console.ReadLine());
 }
 
-int a = GetData();
-int b = GetData();
-int c = GetData();
-int d = GetData();
-int e = GetData();
-int f = GetData();
-int g = GetData();
-int h = GetData();
-int i = GetData();
-
-int max1 = Max(a, b, c);
-int max2 = Max(d, e, f);
-int max3 = Max(g, h, i);
-
-int max = Max(max1, max2, max3);
-
+int max = Max(
+                 Max(GetData(), GetData(), GetData()),
+                 Max(GetData(), GetData(), GetData()),
+                 Max(GetData(), GetData(), GetData())
+              );
+              
 Console.Write("Максимальное число:  ");
 Console.WriteLine(max);
