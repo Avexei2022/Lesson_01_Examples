@@ -1,24 +1,148 @@
 ﻿// Работаем с массивом
-int [] array = {11, 21, 31, 41, 15, 61, 17, 18, 91};
+
+// Поиск максимального числа в массиве
+
+//int [] array = {11, 21, 31, 41, 15, 211, 17, 18, 91};
 
 // Выводим на экран значение первого числа в массие
-Console.WriteLine(array[0]);
+//Console.WriteLine(array[0]);
 
 // Меняем значение первого числа и выводим на экран
-array[0] = 12;
-Console.WriteLine(array[0]);
+//array[0] = 12;
+//Console.WriteLine(array[0]);
 
 // Выводим на экран значение 5-го элемента 
-Console.WriteLine(array[4]);
+//Console.WriteLine(array[4]);
+
+//***********************
+// Начало блока
+// Вариант 1 находим максимальное число с использованием функции
+//
+//int Max(int args1, int args2, int args3)
+//{
+ //   int result = 0;
+ //   if (args1 > result) result = args1;
+//    if (args2 > result) result = args2;
+//    if (args3 > result) result = args3;
+//    return result;
+//}
 
 
-int array_size = 9;
-int index = 1;
-int max = array[0];
-while(index < array_size)
+//*****************************************
+// Не используем блок между звездочками
+// начало блока
+//int GetData()
+//{
+//   Console.Write("Введите значение: ");
+//    return Convert.ToInt32(Console.ReadLine());
+//}
+// конец блока
+//*********************************
+
+
+//int max = Max(
+//                 Max(array[0], array[1], array[2]),
+//                Max(array[3], array[4], array[5]),
+//                 Max(array[6], array[7], array[8])
+//              );
+//              
+//Console.Write("Максимальное число:  ");
+//Console.WriteLine(max);
+//
+// Конец блока варианта 1
+// ************************ 
+
+//*************************
+// Вариант 2 Начало блока
+
+//int array_size = 9;
+//int index = 1;
+//int max = array[0];
+//while(index < array_size)
+//{
+ //   if (array[index] > max) max = array[index];
+ //   index ++;
+//}
+//Console.Write("Максимальное число в массие: ");
+//Console.WriteLine(max);
+
+// Конец блока Варианта 2
+//****************************
+
+//***************************
+// Начало блока: Поиск позиции значения в массиве
+
+//int [] array = {1, 12, 31, 4, 18, 15, 16, 17, 18}; // Определяем массив
+//int n = array.Length; // Находим размер массива
+// Console.WriteLine(n); // проверка при отладке
+//int find = 18; // Выбираем число из массива для поиска
+//int index = 0; // устанавливаем счетчик массива
+//while (index < n) // Цикл проверки текущего индекса с размером массива  
+//{
+//    if (array[index] == find) // Если найдено тебуемое значение
+//    {
+//        Console.WriteLine(index);
+//        break;
+//    }
+//    index ++; // Увеличиваем счетчик индекса на 1
+//}
+// Конец блока: Поиск позиции значения в массиве
+//***********************************************
+
+//***********************************************
+// Начало блока: Генератор массива
+
+int[] array = new int[10]; // Создаем новый массив из 10 элементов, в таком виде будет заполнен нулями
+void FillArray(int[] collection) // void - ключевое слово создания метода который ни чего не возвращает
+// с именем FillArray и аргументом - массив целых чисел с именем collection
 {
-    if (array[index] > max) max = array[index];
-    index ++;
+    int length = collection.Length; // в переменную length записываем размер массива
+    int index = 0; // в переменную index записываем индекс первого элемента массива
+    while (index < length) // цикл с проверкой текущего индекса на соответствеие размеру массива
+    {
+        collection[index] = new Random().Next(1, 10); //обратимся к аргументу collection на позицию -
+        // index и положим туда новое случайное число — целое число из диапазона 1–10.
+        index++; // index = index + 1
+    }
 }
-Console.Write("Максимальное число в массие: ");
-Console.WriteLine(max);
+
+void PrintArray(int[] col) // создаем новый метод
+{
+    int count = col.Length; // в переменную count записываем размер массива
+    int position = 0; // в переменную position записываем индекс первого элемента массива
+    while (position < count)
+    {
+        Console.WriteLine(col[position]); // выводим через значение текущего элемента
+        position++; // увеличиваем значение текущей позиции
+    }
+} 
+FillArray(array); // Метод заполняет массив случайными числами
+PrintArray(array); // Метод выводит на экран массив
+
+// Конец блока: Генератор массива
+//*****************************************
+
+//***************************************
+// Начало блока IndexOf
+
+int IndexOf(int[] collection, int find) // метод IndexOf, а в качестве аргумента будет приходить
+                                       // массив collection и какой-то элемент find.
+{
+    int count = collection.Length; // определяем количество элементов и записываем в переменную count
+    int index = 0; // Счетчик индекса
+    int position = -1; // индекс найденного элемента
+    while (index < count)  
+    {
+        if (collection[index] == find) // если collection[index] совпал с find, сохраняем позицию в переменную position.
+        {
+            position = index;
+            break;
+        }
+        index++;
+    }
+    return position;
+}
+int pos = IndexOf(array, 4); // Определим переменную pos и положим в неё результат работы
+                             // метода IndexOf. В качестве аргумента будет передаваться наш массив.
+                             // Например, будем искать число 4.
+Console.WriteLine(pos);
